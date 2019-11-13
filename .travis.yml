@@ -5,5 +5,5 @@ services:
 before_install:
   - docker build -t ipuskaric12/testiranje_react -f Dockerfile.dev .
 
-script: 
-  - docker run ipuskaric12/testiranje_react -- --coverage 
+script:
+  - docker run -e CI=true ipuskaric12/testiranje_react npm run test
